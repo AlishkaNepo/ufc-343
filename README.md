@@ -2,192 +2,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fight Card</title>
-
+<title>UFC 343 - Мобильная версия</title>
 <style>
-body {
-    margin: 0;
-    background: #111;
-    color: white;
-    font-family: Arial, sans-serif;
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+body { background:#111; color:#fff; line-height:1.5; padding:10px; }
+
+/* HEADER */
+.header-inner {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
 }
 
-/* Заголовок и кнопка */
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 10px 0;
-}
-
-.header h1 {
-    color: red;
-    font-size: 22px;
-    margin: 0;
+.header-inner h1 {
+    font-size:22px;
+    color:red;
 }
 
 .ufc-link {
-    background: red;
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.2s;
+    background:red;
+    color:white;
+    text-decoration:none;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.2s;
 }
 
-.ufc-link:hover {
-    background: #ff3b3b;
-}
+.ufc-link:hover { background:#ff3b3b; }
 
-/* Контейнер */
-.container {
-    padding: 0 10px 20px 10px;
-}
-
-/* Блок боя */
-.fight {
-    border: 2px solid red;
-    border-radius: 15px;
-    padding: 15px;
-    margin-bottom: 20px;
-    background: #1a1a1a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Бойцы */
-.fighters {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+/* FIGHT CARD */
+.fight-card {
+    background:#1a1a1a;
+    border:2px solid red;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:15px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    flex-wrap:nowrap;
 }
 
 .fighter {
-    text-align: center;
-    flex: 1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
 }
 
 .photo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 4px solid red;
-    object-fit: cover;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    border:4px solid red;
+    overflow:hidden;
+    margin-bottom:5px;
 }
 
-.winner {
-    border-color: limegreen;
+.photo.winner {
+    border-color:limegreen;
 }
+
+.photo img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.name { font-weight:600; font-size:16px; }
 
 .vs {
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
-    margin: 0 5px;
-    flex-shrink: 0;
+    font-size:24px;
+    font-weight:700;
+    color:red;
+    margin:0 10px;
 }
 
-/* Информация о бое */
-.info {
-    text-align: center;
-    font-size: 14px;
+.weight {
+    font-size:14px;
+    color:#ccc;
+    text-align:center;
+    margin-top:5px;
+    width:100%;
 }
 
-.info span {
-    font-weight: bold;
-    color: limegreen;
+/* FOOTER */
+footer {
+    text-align:center;
+    padding:15px;
+    background:#1a1a1a;
+    border-top:2px solid red;
+    color:#ccc;
+    font-size:12px;
 }
 
 /* Мобильная адаптация */
-@media (max-width: 480px) {
-    .fighters {
-        flex-direction: row;
-        gap: 10px;
-    }
-
-    .photo {
-        width: 70px;
-        height: 70px;
-    }
-
-    .vs {
-        font-size: 16px;
-    }
-
-    .info {
-        font-size: 13px;
-    }
+@media screen and (max-width:480px){
+    .photo { width:80px; height:80px; }
+    .name { font-size:14px; }
+    .vs { font-size:20px; margin:0 5px; }
+    .weight { font-size:12px; }
+    .ufc-link{ font-size:12px; padding:5px 10px; }
+    .fight-card { flex-wrap:wrap; gap:10px; justify-content:center; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
+<div class="header-inner">
     <h1>UFC 343</h1>
     <a class="ufc-link" href="https://AlishkaNepo.github.io/UFC-S/" target="_blank">UFC 344</a>
 </div>
 
-<div class="container">
-
 <!-- Бой 1 -->
-<div class="fight">
-    <div class="fighters">
-        <div class="fighter">
-            <img id="aliPhoto" class="photo winner" src="ali.jpg">
-            <div>Али</div>
+<div class="fight-card">
+    <div class="fighter">
+        <div class="photo winner">
+            <img src="ali.jpg" alt="Али">
         </div>
+        <div class="name">Али</div>
+    </div>
 
-        <div class="vs">VS</div>
+    <div class="vs">VS</div>
 
-        <div class="fighter">
-            <img id="beksultanPhoto" class="photo" src="beka.jpg">
-            <div>Бексултан</div>
+    <div class="fighter">
+        <div class="photo">
+            <img src="beka.jpg" alt="Бексултан">
         </div>
+        <div class="name">Бексултан</div>
     </div>
-    <div class="info">
-        Полулегкий вес • Главный бой<br>
-        <span>Судейское решение Р5 05:00</span>
-    </div>
+
+    <div class="weight">Полулегкий вес • Главный бой<br><span style="color:limegreen;font-weight:bold;">Судейское решение Р5 05:00</span></div>
 </div>
 
 <!-- Бой 2 -->
-<div class="fight">
-    <div class="fighters">
-        <div class="fighter">
-            <img id="romanPhoto" class="photo winner" src="roma.jpg">
-            <div>Роман</div>
+<div class="fight-card">
+    <div class="fighter">
+        <div class="photo winner">
+            <img src="roma.jpg" alt="Роман">
         </div>
+        <div class="name">Роман</div>
+    </div>
 
-        <div class="vs">VS</div>
+    <div class="vs">VS</div>
 
-        <div class="fighter">
-            <img id="alikhanPhoto" class="photo" src="alikh.jpg">
-            <div>Алихан</div>
+    <div class="fighter">
+        <div class="photo">
+            <img src="alikh.jpg" alt="Алихан">
         </div>
+        <div class="name">Алихан</div>
     </div>
-    <div class="info">
-        Легкий вес • Со-главный бой<br>
-        <span>Добровольная сдача Р2 02:34</span>
-    </div>
+
+    <div class="weight">Легкий вес • Со-главный бой<br><span style="color:limegreen;font-weight:bold;">Добровольная сдача Р2 02:34</span></div>
 </div>
 
-</div>
-
-<script>
-function changePhoto(id, path){
-    if(path.trim() !== ""){
-        document.getElementById(id).src = path;
-    }
-}
-</script>
+<footer>
+© 2025 My Fight Promotion. Все права защищены.
+</footer>
 
 </body>
 </html>
