@@ -15,39 +15,68 @@ body{
 h1{
     text-align:center;
     color:red;
-    margin-top:20px;
+    margin:10px 0;
+    font-size:24px;
+}
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.ufc-link{
+    background:red;
+    color:white;
+    text-decoration:none;
+    padding:6px 12px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+.ufc-link:hover{
+    background:#ff3b3b;
 }
 
 .container{
     max-width:1000px;
-    margin:30px auto;
-    padding:20px;
+    margin:0 auto 30px auto;
+    padding:0 15px;
 }
 
 /* Блок боя */
 .fight{
     border:2px solid red;
     border-radius:15px;
-    padding:20px;
-    margin-bottom:30px;
+    padding:15px;
+    margin-bottom:25px;
     background:#1a1a1a;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
 }
 
 /* Левая часть */
 .fighters{
     display:flex;
     align-items:center;
-    gap:20px;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+    width:100%;
 }
 
 .fighter{
     text-align:center;
+    flex:1 1 100px;
 }
 
-/* Фото */
 .photo{
     width:100px;
     height:100px;
@@ -56,20 +85,27 @@ h1{
     object-fit:cover;
 }
 
-/* победная рамка */
 .winner{
     border-color:limegreen;
 }
 
 .vs{
     color:red;
-    font-size:30px;
+    font-size:24px;
     font-weight:bold;
+    flex-shrink:0;
 }
 
 /* Правая часть */
 .info{
-    text-align:right;
+    text-align:center;
+    margin-top:10px;
+    width:100%;
+    font-size:14px;
+}
+
+.info span{
+    font-weight:bold;
 }
 
 /* Панель изменения фото */
@@ -77,7 +113,7 @@ h1{
     background:#222;
     padding:15px;
     border-radius:10px;
-    margin-top:30px;
+    margin-top:20px;
 }
 
 .input-panel h3{
@@ -101,37 +137,21 @@ input{
 }
 
 /* Адаптация под телефон */
-@media(max-width:700px){
-    .fight{
-        flex-direction:column;
-        text-align:center;
+@media(max-width:480px){
+    h1{
+        font-size:20px;
+    }
+    .photo{
+        width:80px;
+        height:80px;
+        border-width:4px;
+    }
+    .vs{
+        font-size:20px;
     }
     .info{
-        text-align:center;
-        margin-top:15px;
+        font-size:13px;
     }
-}
-
-.header{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:15px;
-}
-
-.ufc-link{
-    background:red;
-    color:white;
-    text-decoration:none;
-    padding:6px 12px;
-    border-radius:8px;
-    font-size:14px;
-    font-weight:bold;
-    transition:0.2s;
-}
-
-.ufc-link:hover{
-    background:#ff3b3b;
 }
 </style>
 </head>
@@ -147,7 +167,6 @@ input{
 
 <!-- ================= БОЙ 1 ================= -->
 <div class="fight">
-
     <div class="fighters">
         <div class="fighter">
             <img id="aliPhoto" class="photo winner" src="ali.jpg">
@@ -163,16 +182,13 @@ input{
     </div>
 
     <div class="info">
-        Полулегкий вес • Главный бой<br><br>
-        <span style="color:limegreen;font-weight:bold;">Судейское решение Р5 05:00</span>
+        Полулегкий вес • Главный бой<br>
+        <span style="color:limegreen;">Судейское решение Р5 05:00</span>
     </div>
-
 </div>
-
 
 <!-- ================= БОЙ 2 ================= -->
 <div class="fight">
-
     <div class="fighters">
         <div class="fighter">
             <img id="romanPhoto" class="photo winner" src="roma.jpg">
@@ -188,11 +204,11 @@ input{
     </div>
 
     <div class="info">
-        Легкий вес • Со-главный бой<br><br>
-        <span style="color:limegreen;font-weight:bold;">Добровольная сдача Р2 02:34</span>
+        Легкий вес • Со-главный бой<br>
+        <span style="color:limegreen;">Добровольная сдача Р2 02:34</span>
     </div>
-
 </div>
+
 </div>
 
 <script>
