@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -141,7 +140,7 @@ input{
 
 <div class="header">
     <h1>UFC 343</h1>
-    <a class="ufc-link" href="https://AlishkaNepo.github.io/UFC-S/" target="_blank">Перейти на сайт</a>
+    <a class="ufc-link" href="https://AlishkaNepo.github.io/UFC-S/" target="_blank">UFC 344</a>
 </div>
 
 <div class="container">
