@@ -8,21 +8,20 @@
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
     body { background-color:#111; color:#fff; line-height:1.5; padding:10px; }
 
-    header { 
-      text-align:center; 
-      padding:15px; 
-      background-color:#1a1a1a; 
-      border-bottom:2px solid #e60000; 
+    header {
+      text-align:center;
+      padding:15px;
+      background-color:#1a1a1a;
+      border-bottom:2px solid #e60000;
       position:relative;
     }
 
-    header .logo { 
-      font-size:22px; 
-      font-weight:700; 
-      color:#e60000; 
+    header .logo {
+      font-size:22px;
+      font-weight:700;
+      color:#e60000;
     }
 
-    /* КНОПКА ССЫЛКА РЯДОМ С UFC 343 */
     .link-btn{
       position:absolute;
       right:15px;
@@ -41,7 +40,6 @@
     .event-header h1 { font-size:20px; margin-bottom:5px; }
     .event-header p { font-size:14px; color:#ccc; }
 
-    /* Измененный fight-card для лучшего контроля содержимого */
     .fight-card {
       background-color:#1a1a1a;
       border:2px solid #e60000;
@@ -49,25 +47,24 @@
       padding:15px;
       margin-bottom:20px;
       display:flex;
-      flex-direction:column; /* Устанавливаем вертикальный поток по умолчанию */
+      flex-direction:column;
       align-items:center;
     }
 
-    /* Новый контейнер для ряда бойцов и статуса */
-    .fight-row {
-      display:flex;
-      justify-content:space-around;
-      align-items:center;
-      width:100%;
-      margin-bottom:10px; /* Отступ между бойцами и весовой категорией */
-    }
+    .fight-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      width:100%;
+      margin-bottom:10px;
+    }
 
     .fighter {
       display:flex;
       flex-direction:column;
       align-items:center;
       text-align:center;
-      position:relative; /* Важно для позиционирования галочки */
+      position:relative;
     }
 
     .photo {
@@ -75,8 +72,9 @@
       height:100px;
       border-radius:50%;
       border:3px solid #e60000;
-      overflow:hidden;
+      overflow:visible; /* Изменено на visible, чтобы галочка была видна */
       margin-bottom:5px;
+      position:relative;
     }
 
     .photo img {
@@ -85,54 +83,55 @@
       object-fit:cover;
       display:block;
     }
-    
-    /* Новый стиль для зеленой рамки победителя */
-    .winner-frame .photo {
-      border:5px solid #34a853; /* Зеленая рамка */
-    }
+
+    .winner-frame .photo {
+      border:5px solid #34a853;
+    }
 
     .name { font-weight:600; font-size:16px; }
+
+    /* Контейнер для VS и текста результата */
+    .vs-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      flex-grow: 1;
+      margin: 0 15px;
+      position: relative;
+      min-height: 50px; /* Минимальная высота, чтобы вместить текст и VS */
+    }
 
     .vs {
       font-size:24px;
       font-weight:700;
       color:#e60000;
-      margin:0 10px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
+      position: relative; /* Относительное позиционирование для VS */
+      z-index: 2; /* Над текстом результата */
     }
 
-    /* Новый стиль для текста результата */
-    .result-text {
-      font-size:13px;
-      font-weight:600;
-      color:#34a853;
-      white-space:nowrap;
-      order: -1; /* Помещает текст над VS */
-      margin-bottom: 5px;
-    }
+    /* Позиционирование текста результата */
+    .result-text {
+      font-size:13px;
+      font-weight:600;
+      color:#34a853;
+      white-space:nowrap;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
 
-    /* Новый стиль для галочки */
-    .winner-icon {
-      width:25px;
-      height:25px;
-      position:absolute;
-      bottom: 5px; /* Сдвигаем вниз от имени бойца */
-      z-index: 10;
-    }
-    
-    /* Позиция галочки для левого бойца (в классе fighter) */
-    .fight-row > .fighter:first-child .winner-icon {
-        left: 70px; 
-        right: auto;
-    }
-    
-    /* Позиция галочки для правого бойца (в классе fighter) */
-    .fight-row > .fighter:last-child .winner-icon {
-        left: auto;
-        right: 70px;
-    }
+    /* Галочка позиционируется относительно .fighter */
+    .winner-icon {
+      width:25px;
+      height:25px;
+      position:absolute;
+      bottom: 20px; /* Корректировка для центрирования по высоте фото */
+      right: -10px;
+      z-index: 10;
+    }
 
     .weight {
       font-size:14px;
@@ -142,15 +141,13 @@
       width:100%;
     }
 
-    /* Старые стили с абсолютным позиционированием удалены */
-
-    footer { 
-      text-align:center; 
-      padding:15px; 
-      background-color:#1a1a1a; 
-      border-top:2px solid #e60000; 
-      color:#ccc; 
-      font-size:12px; 
+    footer {
+      text-align:center;
+      padding:15px;
+      background-color:#1a1a1a;
+      border-top:2px solid #e60000;
+      color:#ccc;
+      font-size:12px;
     }
 
     @media screen and (max-width:400px){
@@ -162,19 +159,12 @@
       .vs { font-size:20px; margin:0 5px; }
       .result-text { font-size:12px; }
       .weight { font-size:12px; }
-      
+
       .winner-icon {
           width: 20px;
           height: 20px;
-          bottom: 5px; 
-      }
-      
-      .fight-row > .fighter:first-child .winner-icon {
-          left: 60px;
-      }
-      
-      .fight-row > .fighter:last-child .winner-icon {
-          right: 60px;
+          bottom: 15px;
+          right: -5px;
       }
     }
   </style>
@@ -201,9 +191,9 @@
       <img src="galochka.png" class="winner-icon" alt="Победитель">
     </div>
 
-    <div class="vs">
+    <div class="vs-container">
       <div class="result-text">Судейское Решение Р5 05:00</div>
-      VS
+      <div class="vs">VS</div>
     </div>
 
     <div class="fighter">
@@ -226,9 +216,9 @@
       <img src="galka.png" class="winner-icon" alt="Победитель">
     </div>
 
-    <div class="vs">
+    <div class="vs-container">
       <div class="result-text">Добровольная сдача Р2 02:34</div>
-      VS
+      <div class="vs">VS</div>
     </div>
 
     <div class="fighter">
