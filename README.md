@@ -170,22 +170,6 @@ input{
 
 </div>
 
-<!-- ПАНЕЛЬ ДЛЯ СМЕНЫ ФОТО (РАБОТАЕТ НА GITHUB PAGES) -->
-<div class="input-panel">
-    <h3>Смена фото бойцов</h3>
-
-    <label>Али (путь к фото):</label>
-    <input type="text" placeholder="example: images/ali.jpg" oninput="changePhoto('aliPhoto', this.value)">
-
-    <label>Бексултан (путь к фото):</label>
-    <input type="text" placeholder="example: images/beka.jpg" oninput="changePhoto('beksultanPhoto', this.value)">
-
-    <label>Роман (путь к фото):</label>
-    <input type="text" placeholder="example: images/roma.jpg" oninput="changePhoto('romanPhoto', this.value)">
-
-    <label>Алихан (путь к фото):</label>
-    <input type="text" placeholder="example: images/alikh.jpg" oninput="changePhoto('alikhanPhoto', this.value)">
-</div>
 
 </div>
 
