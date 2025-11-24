@@ -8,37 +8,33 @@
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
     body { background-color:#111; color:#fff; line-height:1.5; padding:10px; }
 
-    header {
-      padding:15px;
-      background-color:#1a1a1a;
-      border-bottom:2px solid #e60000;
+    header { 
+      text-align:center; 
+      padding:15px; 
+      background-color:#1a1a1a; 
+      border-bottom:2px solid #e60000; 
+      position:relative;
     }
 
-    .header-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    header .logo { 
+      font-size:22px; 
+      font-weight:700; 
+      color:#e60000; 
     }
 
-    header .logo {
-      font-size:22px;
-      font-weight:700;
-      color:#e60000;
-    }
-
-    .header-btn{
+    /* КНОПКА ССЫЛКА РЯДОМ С UFC 343 */
+    .link-btn{
+      position:absolute;
+      right:15px;
+      top:50%;
+      transform:translateY(-50%);
       background:#e60000;
       color:#fff;
       text-decoration:none;
-      padding:6px 14px;
-      border-radius:20px;
-      font-size:14px;
+      padding:5px 12px;
+      border-radius:15px;
+      font-size:13px;
       font-weight:600;
-      transition:0.2s;
-    }
-
-    .header-btn:hover{
-      background:#ff1a1a;
     }
 
     .event-header { margin:20px 0; text-align:center; }
@@ -97,7 +93,7 @@
       width:100%;
     }
 
-    #rama, #rama2{
+    #rama{
       width:100px;
       height:100px;
       border-radius:50%;
@@ -105,55 +101,75 @@
       overflow:hidden;
       position:absolute;
       left:26px;
+      top:187px;
     }
 
-    #rama{ top:187px; }
-    #rama2{ top:369.5px; }
+    #rama2{
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      border:5px solid #34a853;
+      overflow:hidden;
+      position:absolute;
+      left:26px;
+      top:369.5px;
+    }
 
-    #galochka, #galka{
+    #galochka{
       width:25px;
       height:25px;
       position:absolute;
       left:105px;
+      top:270px;
     }
 
-    #galochka{ top:270px; }
-    #galka{ top:452.5px; }
-
-    #tekst, #tkst{
+    #tekst{
       position:absolute;
-      color:#34a853;
+      top:290px;
       left:370px;
+      color:#34a853;
     }
 
-    #tekst{ top:290px; }
-    #tkst{ top:472.5px; }
+    #galka{
+      width:25px;
+      height:25px;
+      position:absolute;
+      left:105px;
+      top:452.5px;
+    }
 
-    footer {
-      text-align:center;
-      padding:15px;
-      background-color:#1a1a1a;
-      border-top:2px solid #e60000;
-      color:#ccc;
-      font-size:12px;
+    #tkst{
+      position:absolute;
+      top:472.5px;
+      left:370px;
+      color:#34a853;
+    }
+
+    footer { 
+      text-align:center; 
+      padding:15px; 
+      background-color:#1a1a1a; 
+      border-top:2px solid #e60000; 
+      color:#ccc; 
+      font-size:12px; 
     }
 
     @media screen and (max-width:400px){
-      .photo { width:80px; height:80px; }
+      .photo {
+        width:80px;
+        height:80px;
+      }
       .name { font-size:14px; }
       .vs { font-size:20px; margin:0 5px; }
       .weight { font-size:12px; }
-      .header-btn{ font-size:12px; padding:5px 10px; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="logo">UFC 343</div>
-    <a class="header-btn" href="https://AlishkaNepo.github.io/UFC-S/" target="_blank">UFC-S</a>
-  </div>
+  <div class="logo">UFC 343</div>
+  <a class="link-btn" href="https://AlishkaNepo.github.io/UFC-S/" target="_blank">UFC 344</a>
 </header>
 
 <div class="event-header">
@@ -170,14 +186,18 @@
 
 <div class="fight-card">
   <div class="fighter">
-    <div class="photo"><img src="ali.jpg" alt="Али"></div>
+    <div class="photo">
+      <img src="ali.jpg" alt="Али">
+    </div>
     <div class="name">Али</div>
   </div>
 
   <div class="vs">VS</div>
 
   <div class="fighter">
-    <div class="photo"><img src="beka.jpg" alt="Бексултан"></div>
+    <div class="photo">
+      <img src="beka.jpg" alt="Бексултан">
+    </div>
     <div class="name">Бексултан</div>
   </div>
 
@@ -186,14 +206,18 @@
 
 <div class="fight-card">
   <div class="fighter">
-    <div class="photo"><img src="roma.jpg" alt="Роман"></div>
+    <div class="photo">
+      <img src="roma.jpg" alt="Роман">
+    </div>
     <div class="name">Роман</div>
   </div>
 
   <div class="vs">VS</div>
 
   <div class="fighter">
-    <div class="photo"><img src="alikh.jpg" alt="Алихан"></div>
+    <div class="photo">
+      <img src="alikh.jpg" alt="Алихан">
+    </div>
     <div class="name">Алихан</div>
   </div>
 
