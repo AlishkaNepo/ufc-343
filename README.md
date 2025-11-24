@@ -99,8 +99,8 @@
     }
     #tekst{
       position:absolute;
-      top:290px;
-      left:370px;
+      top:360px;
+      left:700px;
       color:#34a853;
     }
     #galka{
