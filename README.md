@@ -112,12 +112,37 @@ input{
         margin-top:15px;
     }
 }
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+
+.ufc-link{
+    background:red;
+    color:white;
+    text-decoration:none;
+    padding:6px 12px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+.ufc-link:hover{
+    background:#ff3b3b;
+}
 </style>
 </head>
 
 <body>
 
-<h1>UFC 343</h1>
+<div class="header">
+    <h1>UFC 343</h1>
+    <a class="ufc-link" href="https://AlishkaNepo.github.io/UFC-S/" target="_blank">Перейти на сайт</a>
+</div>
 
 <div class="container">
 
@@ -169,8 +194,6 @@ input{
     </div>
 
 </div>
-
-
 </div>
 
 <script>
