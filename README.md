@@ -152,7 +152,7 @@ footer {
 
     <div class="fighter">
         <div class="photo">
-            <img src="alikh.jpg" alt="Алихан">
+            <img src="alikhan.jpg" alt="Алихан">
         </div>
         <div class="name">Алихан</div>
     </div>
